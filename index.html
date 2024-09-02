@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <title> </title>
+    <link rel = "stylesheet" href = "style.css">
+    <script src="https://kit.fontawesome.com/72c2a6a442.js" crossorigin="anonymous"></script>
+</head>
+<title>Title of the document</title>
+</head>
+
+<body>
+    <div id = "header">
+        <div class = "container">
+            <nav>
+                <h1 class = "jh">JIALI.</h1>
+                <ul>
+                    <li><a href = "#">Home</a></li>
+                    <li><a href = "#">About</a></li>
+                    <li><a href = "#">Services</a></li>
+                    <li><a href = "#">Portfolio</a></li>
+                    <li><a href = "#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class = "header-text">
+                <p>UI/UX Designer</p>
+                <h1> Hi, I'm <span>Jiali Huang</span> <br> From London</h1>
+
+            </div>
+        </div>
+    </div>
+
+<div id  = "about">
+    <div class = "container">
+        <div class = "row">
+            <div class = "about-col-1">
+                <img src = "comput.png">
+
+            </div>
+            <div class = "about-col-2">
+                <h1 class = "sub-title">About Me</h1>
+                <p>About
+                    I am an Economics, Finance and Data Science Undergraduate and 
+                    I have a strong willingness to learn and face new challenges that come my way. 
+                    I am interested in careers in technology and finance and have a passion towards problem solving.</p>
+                    <div class = "tab-titles">
+                        <p class = "tab-links active-link" onclick = "opentab('skills')">Skills</p>
+                        <p class = "tab-links" onclick ="opentab('experience')"> Experience</p>
+                        <p class = "tab-links"onclick = "opentab('education')"> Education</p>
+                    </div>
+                    <div class = "tab-contents active-tab" id = "skills">
+                    <ul>
+                        <li><span>UT/UX </span><br>Designing Web Pages</span></li>
+                        <li><span>UT/UX </span><br>Web Development</span></li>
+                        <li><span>UT/UX </span><br>Data Visualisation</span ></li>
+                        </ul>
+                        </div>
+
+                        <div class = "tab-contents" id="experience">
+                        <ul>
+                            <li><span>Oct 2024</span><br>Goldman Sachs Engineering Academy</span></li>
+                            <li><span>UT/UX </span><br>Web Development</span></li>
+                            <li><span>UT/UX </span><br>Data Visualisation</span></li>
+                        </ul>
+                            </div>
+                    <div class = "tab-contents" id="education">
+                        <ul>
+                            <li><span>2023-2026 </span><br>Imperial College London EFDS</span></li>
+                            <li><span>2022-2023 </span><br>CS at Kings College London</span></li>
+                            <li><span>2020-2022 </span><br> London Academy of Excellence Tottenham</span></li>
+                            </ul>
+                    </div>
+                   
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---services-->
+<div id = "services">
+    <div class = "container">
+        <h1 class = "sub-title"> Services</h1>
+        <div class = "services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2> Web Design </h2>
+                <p>Lorem ipsum etc...</p>
+                <a href = "#">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-microchip"></i>
+                <h2> Web Development </h2>
+                <p>Lorem ipsum etc...</p>
+                <a href = "#">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-person-chalkboard"></i>
+                <h2> Data Visualisation</h2>
+                <p>Lorem ipsum etc...</p>
+                <a href = "#">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for (tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+</body>
+
+</html>

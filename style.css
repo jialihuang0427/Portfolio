@@ -1,48 +1,219 @@
 *{
     margin:0;
     padding:0;
-    font-family: 'Poppins', sans-serif;
+    font-family:  'Open Sans';
     box-sizing:border-box;
 }
 
-body{
-    background: #080808;
-    color:#fff;
+:root {
+    --default-color:black;
+    --selftaught-col: white;
+    --background-color: #080808;
+    --formbackground-color:#080808;
+    --phone-background:  url('backcopy.jpg');
+    --background-image: url('back.jpg'); /* Dark mode image */
+    --about-image: url('jialidark.png');
+    --text-color: #fff;
+    --nav-bg-color: #373131a3;
+    --button-bg-color: #4887c5;
+    --contact-section-bg-color: #2b2b2b;
+    --footer-bg-color: #396d87;
 }
 
+/* Light mode colors */
+.light-theme {
+    --default-color: white;
+    --background-color: #f4f4f4;
+    --selftaught-col: rgb(22, 54, 143);
+    --formbackground-color: #eff0f2; 
+    --phone-background:  url('lightcopy.jpg');
+    --about-image: url('jialilight.png');
+    --background-image: url('light.jpg'); /* Dark mode image */
+    --text-color: #333;
+    --nav-bg-color: #f0efef;
+    --button-bg-color: #082e54;
+    --contact-section-bg-color: #e0e0e0;
+    --footer-bg-color:  #082e54;
+    --services-bg-color: #ffffff;  /* Update this for services section */
+    --services-text-color: #333;   /* Update this for services text */
+}
+
+body{
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;                 /* Fully transparent at the start */
+        transform: translateY(50px); /* Start 50px below its final position */
+    }
+    100% {
+        opacity: 1;                 /* Fully visible */
+        transform: translateY(0);    /* Back to its original position */
+    }
+}
+
+/* Apply fade-in from bottom animation to the header text */
+.header-text h1 {
+    margin-top: 20%;
+    font-size: 60px;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+    animation: fadeInUp 2s ease-in-out; /* Apply the fade-in from bottom animation */
+    padding-left: 90px; /* Move the text to the right */
+    font-weight: bold; /* Make the text bold */
+    color: #ffffff; /* Set a fixed color (white in this case) */
+}
+
+#whitetext {
+    color: white; /* This sets the text color for dark mode */
+}
+
+.header-text h4 {
+    margin-top: 10%;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+    animation: fadeInUp 2s ease-in-out; /* Apply the fade-in from bottom animation */
+    padding-left: 90px; /* Move the text to the right */
+    font-weight: bold; /* Make the text bold */
+    color: var(--selftaught-col);
+}
+.header-text h1 span {
+    font-family: 'Poppins', sans-serif; /* Ensure the span uses the same font */
+    color:  #4887c5;/* Highlight the "Jiali Huang" part */
+    font-weight: 700; /* Bold weight for consistency */
+}
+.video-container {
+    margin-bottom: 40px;
+    position: absolute;
+    top: 50%; /* Adjust as needed */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    width: 50%; /* Set width to be smaller than the image */
+    height: auto; /* Maintain aspect ratio */
+    width: 90vw; /* Set the video width as 70% of the viewport width */
+    height: 45vw; 
+    z-index: 1; /* Behind the text, but above the background */
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the video covers the container */
+}
 #header{
     width : 100%;
-    height : 100vh;
-    background-image: url(back.jpg);
+    height: 100vh;
+    height : auto;
+    background-image: var(--background-image); /* Background spans full width */
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    padding-bottom: 200px; /* Add padding at the bottom to create space */
+    position: relative;
+  
 }
+.header-content {
+    display: flex;                /* Enable Flexbox */
+    align-items: center;          /* Vertically center content */
+    justify-content: space-between; /* Put space between the text and the image */
+    flex-wrap: wrap;              /* Allow wrapping on smaller screens */
+    gap: 20px;                    /* Add space between text and image */
+    width : 100%;
+    height : 100vh;
+    position: relative;
+    padding-bottom: 30px; /* Add padding at the bottom to create space */
+    z-index: 2;
+}
+.header-text {
+    flex-basis: 60%;              /* Set how much space the text takes up */
+}
+
+.header-image {
+    flex-basis: 35%;              /* Set how much space the image takes up */
+    display: flex;
+    justify-content: center;      /* Horizontally center the image */
+    margin-top: 200px;    
+}
+
+.header-image img {
+    max-width: 100%;              /* Ensure the image doesn't overflow */
+    height: auto;                 /* Maintain the aspect ratio */
+    border-radius: 10px;          /* Optional: Add rounded corners */
+}
+
 .container{
     padding: 10px 10%;
 }
 
+.theme-toggle-container {
+    position: relative; /* Allows positioning of the label */
+    display: inline-block; /* Keeps the icon inline with other nav elements */
+    width: 50px; /* Adjust width to give more space for the label */
+    text-align: center; /* Center the icon and label */
+}
+
+#theme-toggle i {
+    font-size: 24px; /* Size of the toggle icon */
+    color: var(--text-color); /* Adjusts color based on the current theme */
+}
+
+#theme-label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-160%) translateY(-25%); /* Center the label horizontally under the icon */
+    font-size: 12px; /* Smaller text for the label */
+    color: var(--text-color); /* Adjust color with the theme */
+    font-weight: normal; /* Normal font weight */
+    font-family: Poppins;
+    
+}
+#theme-label {
+    font-size: 10px; /* Smaller text for the label */
+    font-weight: normal;
+    color: var(--text-color); /* Adjusts with theme */
+    margin-top: 5px; /* Space between icon and label */
+}
 .jh{
+    display: flex;
+    align-items: center; /* Vertically align the text and image */
     font-style: normal;
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif
 }
 
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap:wrap;
-    position: relative;
+.logo {
+    width: 40px; /* Adjust the size of the logo as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and text */
 }
 
+
+nav {
+    background-color: var(--nav-bg-color);
+    color: var(--text-color);
+    display: flex;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Stretches the navbar across the entire width */
+    padding: 10px 20px; /* Adjust padding as needed */
+    z-index: 1000; /* Ensures navbar stays on top of other elements */
+    border-radius: 0; /* Removes border-radius to cover the full width */
+}
+
+
+
 nav ul li{
+    color: var(--text-color);
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
     position: relative;
 }
 nav ul li a{
-    color: #fff;
     text-decoration: none;
     font-size: 18px;
     position: relative;
@@ -53,6 +224,9 @@ nav ul li a:hover{
     text-decoration: none;
     font-size: 18px;
     position: relative;
+}
+nav ul li a:visited {
+    color: var(--text-color); /* Use the text color variable for normal and visited states */
 }
 nav ul li a::after{
     content: '';
@@ -67,7 +241,37 @@ nav ul li a::after{
 nav ul li a:hover::after{
     width :100%;
 }
+nav ul li a.active-link {
+    color: var(--text-color); /* Ensure the active link color matches */
+    border-bottom: 2px solid lightblue; /* Optional underline for active link */
+}
+.contact-btn:visited {
+    color: white; /* Ensure the contact button text stays white */
+}
+#contact{
+    background-color: var(--contact-section-bg-color);
+    color: var(--text-color); 
+    padding: 50px 0; /* Add padding to give space around the content */
+    margin-bottom: 0;
+}
+.contact-btn {
+    background-color: var(--button-bg-color);
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding to give it a button shape */
+    border-radius: 8px; /* Rounded corners */
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
 
+.contact-btn:hover {
+    background-color: #082e54; /* Darker orange on hover */
+    transform: translateY(-3px); /* Slight movement upwards on hover */
+}
+.contact-right form input, .contact-right form textarea {
+    background: var(--formbackground-color); /* Adapt background based on theme */
+    color: var(--text-color); /* Text color adjusts based on theme */
+}
 .header-text{
     margin-top: 20%;
     font-size: 30px;
@@ -92,13 +296,43 @@ nav ul li a:hover::after{
     justify-content: space-between;
     flex-wrap: wrap;
 }
+@keyframes fadeIn {
+    0% {
+        opacity: 0;                
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;                  
+        transform: translateY(0);     
+    }
+}
+
+/* Apply the hidden state initially */
+.ptext {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Class to be added when the element is in view */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
 .about-col-1{
     flex-basis: 35%
 }
 
-.about-col-1 img{
+.about-col-1 img {
+    content: url('jialidark.png'); /* Image for dark mode */
     width: 100%;
     border-radius: 15px;
+}
+
+/* Light mode */
+.light-theme .about-col-1 img {
+    content: url('jialilight.png'); /* Image for light mode */
 }
 
 .about-col-2{
@@ -106,22 +340,54 @@ nav ul li a:hover::after{
 }
 
 .sub-title{
-    font-size: 60px;
+    font-size: 30px;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
 }
-.tab-titles{
+#skills-section {
+    background-color: var(--background-color); /* Ensure background matches the theme */
+    color: var(--text-color); /* Use the global text color variable */
+    padding: 30px 0;
+}
+
+/* Ensure all text inside skills uses the correct text color */
+#skills-section h1,
+#skills-section p,
+#skills-section ul li {
+    color: var(--text-color); /* Ensure text uses global text color */
+}
+.skills-content {
     display: flex;
-    margin: 20px 0 40px;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;    /* Horizontally center elements */
+    
+}
+
+.tab-titles {
+    display: flex;
+    gap: 20px;            /* Space between each tab title */
+    margin-bottom: 10px;  /* Reduce the margin to make the layout tighter */
+    font-weight: bold;
+    font-family: 'Poppins'; /* Apply Poppins font */
+    font-size: 20px;
+    justify-content: center; /* Center align the tab titles */
 }
 .tab-links{
-    margin-right: 50px;
+    padding: 10px 20px;
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
     position: relative;
+    border: 1px solid #ddd;
+    border-radius: 10px 10px 0 0;
+    background-color: var(--background-color); 
+    color: var(--text-color); /* Default text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 .tab-links::after{
     content: '';
     width :0;
@@ -133,8 +399,16 @@ nav ul li a:hover::after{
     transition: 0.5s;
 
 }
+
+
+/* Add hover effect for better UI/UX */
+.tab-links:hover {
+    background-color: #333; /* Darker background on hover */
+    color: white; /* White text color on hover */
+}
+
 .tab-links.active-link::after{
-    width: 50%;
+    width: 100%;
 }
 
 .tab-contents ul li{
@@ -146,20 +420,60 @@ nav ul li a:hover::after{
     color: lightblue;
     font-size: 14px;
 }
-
-.tab-contents{
-    display:none;
+.tab-links.active-link {
+    background-color: #222; /* Darkened background color */
+    color: #fff; /* Change text color to white */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+    border-bottom: none; /* Remove the bottom border for active tab */
 }
+
+.light-theme .tab-links.active-link {
+    background-color: #f9f9f9; /* Light theme background */
+    color: #333; /* Light theme text color */
+}
+.light-theme .tab-links:hover {
+    background-color: #dedede; /* Hover background in light theme */
+    color: #000; /* Hover text color in light theme */
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+.light-theme .tab-contents {
+    background-color: var(--formbackground-color);
+    color: var(--text-color);
+}
+
+.tab-contents {
+    font-weight: bold;
+    font-family: 'Poppins'; /* Apply Poppins font */
+    display: none;
+    margin: 0 auto;       /* Center the tab container */
+    max-width: 700px;     /* Restrict the width for better readability */
+    text-align: left;     /* Left-align the text inside */
+    height: 400px;        /* Fixed height for the container */
+    overflow-y: auto;     /* Enable vertical scrolling */
+    padding: 20px;        /* Add some padding for better readability */
+    border: 1px solid #ddd; /* Optional: Add a border to make it look more distinct */
+    border-radius: 5px;  /* Optional: Add some rounded corners */
+    background-color: var(--default-color) /* Background color for better contrast */
+}
+
 
 .tab-contents.active-tab{
     display:block;
+
 }
 
-#services{
+#skills{
+    background-color: var(--bg-color);
+    color: white;
     padding: 30px 0;
 }
 
 .services-list{
+    color: white;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     grid-gap: 40px;
@@ -167,6 +481,8 @@ nav ul li a:hover::after{
 }
 
 .services-list div{
+   
+    color: white;
     background: #262626;
     padding: 40px;
     font-size: 13px;
@@ -183,14 +499,423 @@ nav ul li a:hover::after{
 .services-list div i{
     font-size: 30px;
     font-weight: 500px;
+    color: white;
     margin-bottom: 15px;
 }
 
 .services-list div a{
     text-decoration: none;
-    color:#fff;
+    color: white;
     font-size: 12px;
     margin-top: 20px;
     display: inline-block;
+}
+
+/*portfolio*/
+#portfolio{
+    padding: 50px 0;
+}
+
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top:50px;
+}
+
+.work{
+    border-radius:10px;
+    position:relative;
+    overflow: hidden;
+}
+.work img{
+    width:100%;
+    border-radius: 10px;
+    display:block;
+    transition: transform 0.5;
+    height: 400px; /* Set a fixed height */
+}
+
+.layer{
+    width : 100%;
+    height:0;
+    background: linear-gradient(rgba(0,0,0,0.6), darkblue);
+    border-radius: 10px;
+    position:absolute;
+    left :0;
+    bottom:0;
+    overflow:hidden;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align:center;
+    font-size: 14px;
+    transition:height 0.5s;
+}
+
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.layer a{
+    margin-top:20px;
+    color: darkblue;
+    text-decoration: none;
+    font-size: 18px;
+    line-height:60px;
+    background: #fff;
+    width: 60px;
+    height:60px;
+    border-radius: 50%;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+
+.work:hover .layer{
+    height: 100%
+}
+/* Dark Mode (default) button style */
+.btn {
+    display: inline-block;
+    margin: 50px auto; /* Center horizontally */
+    padding: 10px 20px; /* Make the button smaller */
+    border-radius: 6px;
+    text-decoration: none;
+    background-color: #4887c5; /* Black background for dark mode */
+    color: white; /* White text for dark mode */
+    border: 2px solid black; /* Border same as background */
+    transition: background-color 0.3s, color 0.3s;
+    width: auto; /* Button width will be auto based on text */
+    text-align: center;
+    position: relative;
+    left: 50%;  /* Center horizontally */
+    transform: translateX(-50%);  /* Adjust to perfectly center */
+}
+
+/* Button hover effect in dark mode */
+.btn:hover {
+    background-color: #333; /* Slightly lighter black on hover */
+    color: white; /* Keep white text on hover */
+}
+
+/* Light Mode button style */
+.light-theme .btn {
+    background-color: #082e54; /* White background for light mode */
+    color: black; /* Black text for light mode */
+    border: 2px solid white; /* Border same as background */
+}
+
+/* Button hover effect in light mode */
+.light-theme .btn:hover {
+    background-color: #e0e0e0; /* Light grey background on hover */
+    color: black; /* Keep black text on hover */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between; /* Space between the two sections */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Optional: Space between the sections */
+}
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top:30px;
+}
+.contact-left .btn2 {
+    transform: translateX(-200px); /* Move the button 50px to the left */
+}
+
+
+#ptext{
+    color: var(--text-color);
+}
+
+p {
+    color: var(--text-color);
+}
+
+
+h2{
+    color: white;
+}
+
+
+.contact-left p i{
+    color: #0073ff;
+    margin-right:15px;
+    font-size: 25px;
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: #4689a5;
+    transform: translateY(-5px);
+
+}
+.social-iconz{
+    margin-top: 50px;        /* Increase margin-top to shift them down */
+    display: flex;           /* Use flexbox to control alignment */
+    justify-content: center; /* Center the icons */
+    gap: 20px;               /* Add space between the icons */
+    margin-left: -200px;      /* Shift them left */
+    
+}
+.social-iconz a{
+    text-decoration: none;
+    font-size: 30px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-iconz a:hover{
+    color: #4689a5;
+    transform: translateY(-5px);
+
+}
+
+
+
+
+.btn2 {
+    display: inline-block;
+    padding: 14px 30px; /* Adjust padding to make buttons the same size */
+    border-radius: 6px;
+    text-decoration: none;
+    background-color: var(--button-bg-color);
+    color: white;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    width: auto; /* Ensure the width adjusts based on the content */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Ensure buttons have the same width */
+.btn2 {
+    min-width: 150px; /* Set a minimum width for consistency */
+}
+
+/* Button hover effect */
+.btn2:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* Make buttons inline-block with consistent size */
+form .btn2 {
+    width: auto; /* Ensure button adapts to content */
+}
+.btn.btn2:visited {
+    color: white; /* Set the visited text color to white */
+    text-decoration: none; /* Ensure no underline */
+}
+.light-theme .btn.btn2 {
+    background: var(--button-bg-color); /* Use light mode button color */
+    color: white; /* White text in light mode */
+}
+.light-theme .btn2:hover {
+    background-color: #333;
+    color: white;
+}
+.light-theme .btn.btn2:visited {
+    color: white; /* Make sure visited state in light mode is also white */
+}
+.contact-right form{
+    width :100%;
+}
+
+form input,form textarea{
+    width:100%;
+    border:0;
+    outline: none;
+    background:#262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+form btn2{
+    padding: 14px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.copyright{
+    background-color: var(--footer-bg-color);
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    font-weight: 300;
+    margin-top: 0px;
+    
+
+}
+
+.copyright i{
+    color: red;
+}
+
+/*------css for small screen*/
+
+nav .fa-solid{
+    display: none;
+}
+
+/*------css for small screen*/
+
+
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: var(--phone-background);
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .video-container {
+        margin-bottom: 40px;
+        position: absolute;
+        top: 50%; /* Adjust as needed */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -130%);
+        width: 50%; /* Set width to be smaller than the image */
+        height: auto; /* Maintain aspect ratio */
+        width: 90vw; /* Set the video width as 70% of the viewport width */
+        height: 45vw; 
+        z-index: 1; /* Behind the text, but above the background */
+    }
+    
+    .video-container video {
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* Ensures the video covers the container */
+    }
+    .header-content {
+        flex-direction: column;   /* Stack text and image vertically on smaller screens */
+    }
+
+    .header-text, .header-image {
+        flex-basis: 100%;         /* Full width for both sections */
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: rgb(32, 149, 188);
+        position: fixed;
+        top: 0;
+        right: -200px;;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        text-transform: lowercase; /* Make the text lowercase */
+        margin: 25px;
+    }
+
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    /* Contact link in lowercase and remove button-like appearance */
+    .contact-btn {
+        background: none;
+        color: white;
+        padding: 0;
+        font-weight: normal;
+        border-radius: 0;
+        text-transform: lowercase; /* Make the text lowercase */
+        font-size: 18px;
+    }
+   
+
+    .contact-btn:hover {
+        color: lightblue;
+    }
+
+    /* Light/dark mode toggle styling */
+    .theme-toggle-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px; /* Adjust as needed */
+    }
+
+    #theme-toggle i {
+        font-size: 24px; /* Adjust icon size */
+    }
+
+    #theme-label {
+        font-size: 18px;           /* Match font size of other nav items */
+        font-family: sans-serif; /* Use the same font as other nav items */
+        color: white;              /* Ensure the color matches the theme */
+        text-transform: lowercase; /* Optional: Make it uppercase for consistency */
+        margin-left: 75px;         /* Space between icon and label */
+        padding: 0;                /* Remove any padding */
+        white-space: nowrap;       /* Prevent the text from wrapping to the next line */
+    }
+
+
+   
+    .sub-title{
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left,.contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 14px;
+    }
+
 }
 

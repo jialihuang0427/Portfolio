@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
+     <!--https://www.youtube.com/watch?v=0YFrGy_mzjY for tutorial-->
 <head>
     <meta charset = "utf-8">
-    <title> </title>
+    <title> My Great Site</title>
+    <meta property="og:url" content="https://jiali-new-website-link.com" />
+    <meta property="og:site_name" content="My Great Site" />
+    <link rel="canonical" href="https://jiali-new-website-link.com" />
+    <link rel="icon" href="logo.png" type="logo.png">
     <link rel = "stylesheet" href = "style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/72c2a6a442.js" crossorigin="anonymous"></script>
 </head>
 <title>Title of the document</title>
@@ -13,110 +21,370 @@
     <div id = "header">
         <div class = "container">
             <nav>
-                <h1 class = "jh">JIALI.</h1>
-                <ul>
-                    <li><a href = "#">Home</a></li>
-                    <li><a href = "#">About</a></li>
-                    <li><a href = "#">Services</a></li>
-                    <li><a href = "#">Portfolio</a></li>
-                    <li><a href = "#">Contact</a></li>
+                <h1 class="jh">
+                    <img src="logo.png" alt="Logo" class="logo"> Jiali.
+                </h1>
+                <ul id = "sidemenu">
+                    <li><a href = "#header">Home</a></li>
+                    <li><a href = "#about">About</a></li>
+                    <li><a href = "#skills">Skills</a></li>
+                    <li><a href = "#portfolio">Portfolio</a></li>
+                    <li><a href = "#contact" class= "contact-btn">Contact</a></li>
+                    <li class="theme-toggle-container">
+                        <a href="#" class="theme-toggle" id="theme-toggle">
+                            <i class="fas fa-sun"></i> <!-- Toggle icon -->
+                        </a>
+                        <span id="theme-label">LIGHT MODE</span> <!-- Label under icon -->
+                    </li>
+                    
+                    <i class="fa-solid fa-circle-xmark" onclick = "closemenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick = "openmenu()"></i>
             </nav>
+
+            <div class="video-container">
+                <video autoplay muted loop id = "themeVideo">
+                    <source src="intro2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class = "header-content">
             <div class = "header-text">
-                <p>UI/UX Designer</p>
-                <h1> Hi, I'm <span>Jiali Huang</span> <br> From London</h1>
+                <h1> HI, I'M <span>JIALI HUANG</span> <br> FROM LONDON</h1>
+                <h4>A self taught programmer!</h4>
+                <div class="social-iconz">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jh427/"><i class="fab fa-linkedin"></i></a>
+                </div>
 
             </div>
+            <div class="header-image">
+                <!--inset image-->
+            </div>
         </div>
+    </div>
     </div>
 
 <div id  = "about">
     <div class = "container">
         <div class = "row">
             <div class = "about-col-1">
-                <img src = "comput.png">
+                <img src = "jialidark.png">
 
             </div>
             <div class = "about-col-2">
                 <h1 class = "sub-title">About Me</h1>
-                <p>About
-                    I am an Economics, Finance and Data Science Undergraduate and 
-                    I have a strong willingness to learn and face new challenges that come my way. 
-                    I am interested in careers in technology and finance and have a passion towards problem solving.</p>
-                    <div class = "tab-titles">
-                        <p class = "tab-links active-link" onclick = "opentab('skills')">Skills</p>
-                        <p class = "tab-links" onclick ="opentab('experience')"> Experience</p>
-                        <p class = "tab-links"onclick = "opentab('education')"> Education</p>
-                    </div>
-                    <div class = "tab-contents active-tab" id = "skills">
-                    <ul>
-                        <li><span>UT/UX </span><br>Designing Web Pages</span></li>
-                        <li><span>UT/UX </span><br>Web Development</span></li>
-                        <li><span>UT/UX </span><br>Data Visualisation</span ></li>
-                        </ul>
-                        </div>
+                <br><br>
 
-                        <div class = "tab-contents" id="experience">
-                        <ul>
-                            <li><span>Oct 2024</span><br>Goldman Sachs Engineering Academy</span></li>
-                            <li><span>UT/UX </span><br>Web Development</span></li>
-                            <li><span>UT/UX </span><br>Data Visualisation</span></li>
-                        </ul>
-                            </div>
-                    <div class = "tab-contents" id="education">
-                        <ul>
-                            <li><span>2023-2026 </span><br>Imperial College London EFDS</span></li>
-                            <li><span>2022-2023 </span><br>CS at Kings College London</span></li>
-                            <li><span>2020-2022 </span><br> London Academy of Excellence Tottenham</span></li>
-                            </ul>
-                    </div>
+                <p class = "ptext">
                    
+                    I am an undergraduate student pursuing a degree in Economics, Finance, and Data Science at Imperial College London.
+                     I have a strong passion for integrating technology with finance, which drives my approach to solving complex problems. 
+                     My core strengths lie in data analysis, programming, and financial modeling, which enable me to handle challenging projects
+                      with a methodical and results-oriented mindset.</p>
+                      <br>
+                      <p class = "ptext">
+                    My technical expertise includes proficiency in Python, Java, SQL, R, and data visualisation tools, which I use to analyse
+                     large datasets and develop predictive models. I am particularly skilled in using statistical methods
+                      to uncover insights and trends in data. Through my academic coursework and personal projects, I have gained hands-on experience in 
+                      applying these techniques, providing me with a well-rounded
+                       understanding of both the technical and financial aspects of problem-solving.
+                    </p>
+                    <br>
+                    <p class = "ptext">
+                    In addition to programming, I am experienced in web development and have a strong foundation in HTML, CSS, and JavaScript,
+                     which complements my data science skills. My approach to projects involves a combination of creativity and analytical thinking, 
+                     allowing me to develop innovative solutions while maintaining a focus on accuracy and efficiency.
+                    </p>
+                    <br>
+                    <p class = "ptext">
+                    My interests also extend to the practical applications of data science in finance, such as optimising decision-making processes 
+                    and improving financial forecasting. I am constantly seeking new opportunities to apply my technical skills in real-world settings, 
+                    whether through internships, academic projects, or personal initiatives. I am particularly drawn to roles that allow me to work with data 
+                    to drive strategic decisions and develop solutions that have a tangible impact.
+                    
+                    </p>
+                 </div>
+                </div>
+            </div>
+        </div>
+   
+<!-- Skills Section -->
+<div id = "skills">
+<div id="skills-section">
+    <div class="container">
+        <h1 class="sub-title" >Skills</h1>
+        <div class="skills-content">
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skill')">SKILLS</p>
+                <p class="tab-links" onclick="opentab('experience')">EXPERIENCE</p>
+                <p class="tab-links" onclick="opentab('education')">EDUCATION</p>
+            </div>
+        </div>
+            <!-- Skills Tab -->
+            <div class="tab-contents active-tab" id="skill">
+                <ul>
+                    <li><span>HTML/CSS/JS </span><br>Designing interactive web-pages/web-sites
+                        creating a nice user experience</li>
+                    <li><span>Java/JavaFX</span><br>Creating small applications with Java and interactive
+                         applications</li>
+                    <li><span>R</span><br>Abstracting from large complex datasets to create visually appealing graphical imagery</li>
+                    <li><span>Python</span><br>Extensive knowledge of Python for Data Manipulation and coding small programs </li>
+                    <li><span>Git</span><br> Use of Git to link local data to remote repository</li>
+                </ul>
+            </div>
+
+            <!-- Experience Tab -->
+            <div class="tab-contents" id="experience">
+                <ul>
+                    <li><span>April 2024 </span><br><i>Jane Street Spring Programme</i>
+                        <br>- Worked as team to develop an algorithm to effectively track and determine self-trades, working to fulfil 
+                        client needs and create an effective alert system to notify the occurrence of self-trades. Presented the solution to
+                         clients and other Spring Interns in the company 
+                        <br>
+                        -  Gained comprehensive knowledge about Exchange-Traded Funds and the functioning of order books. 
+                        </li>
+                    <li><span>April 2024 - Present</span><br><i>Data Science and AI Academic Mentor/ Economics Mentor</i>
+                    <br>
+                    - Academic Mentor for Data Science and AI at Imperial Global Summer School, working full-time during the summer to help aspiring students learn and improve 
+                    <br>
+                    - Assisting lecturers for economics workshops during the summer for outreach 
+                    </li>
+                    <li><span>January 2023 - Present</span><br><i>Coding Teacher for Cypher Coders</i>
+                        <br>- Organising and leading after school coding clubs onsite each week for different schools across London, teaching code and creating new coding projects.
+                        <br>
+                        - Helping with camp promotions
+                        </li>
+                </ul>
+            </div>
+
+            <!-- Education Tab -->
+            <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>2023-2026</span><br><i>Imperial College London (Economics, Finance, and Data Science)</i></li>
+                    <li><span>2022-2023</span><br><i>Computer Science at King's College London</i></li>
+                    <li><span>2020-2022</span><br><i>London Academy of Excellence Tottenham</i>
+                    <br> A Levels in: Maths, Further Maths, Computer Science, Economics, EPQ
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
 
+
 <!---services-->
-<div id = "services">
+<div id = "Techniques">
     <div class = "container">
-        <h1 class = "sub-title"> Services</h1>
+        <h1 class = "sub-title"> Techniques</h1>
         <div class = "services-list">
             <div>
                 <i class="fa-solid fa-code"></i>
                 <h2> Web Design </h2>
-                <p>Lorem ipsum etc...</p>
-                <a href = "#">Learn More</a>
+                <br>
+                <p id = "whitetext">Creating visually appealing and user-friendly interfaces for websites. 
+                    Focusing on user experiences for ease of navigation</p>
+               <!---<a href = "#">Learn More</a>--> 
             </div>
             <div>
                 <i class="fa-solid fa-microchip"></i>
                 <h2> Web Development </h2>
-                <p>Lorem ipsum etc...</p>
-                <a href = "#">Learn More</a>
+                <br>
+                <p id = "whitetext">Technical process of building websites to ensure smooth functionality</p>
+                <!---<a href = "#">Learn More</a>--> 
             </div>
             <div>
                 <i class="fa-solid fa-person-chalkboard"></i>
                 <h2> Data Visualisation</h2>
-                <p>Lorem ipsum etc...</p>
-                <a href = "#">Learn More</a>
+                <br>
+                <p id = "whitetext">Graphical representation of data, turning complex datasets into easy-to-understand visualisations</p>
+               <!---<a href = "#">Learn More</a>--> 
             </div>
         </div>
     </div>
 </div>
+<!-------------portfolio--->
+<div id = "portfolio">
+    <div class = "container">
+        <h1 class = "sub-title">My Work</h1>
+        <br>
+        <p> To be updated...</p>
+        <div class="work-list">
+            <div class = "work">
+                <img src = "work-3.png">
+                <div class = "layer">
+                    <h3> Social Media App</h3>
+                    <p id = "whitetext">This app connects you to talented people </p>
+                    <a href = "#"><i class="fas fa-wrench"></i></a>
+
+                </div>
+            </div>
+            <div class = "work">
+                <img src = "work-2.png">
+                <div  class = "layer">
+                    <h3 > Shopping App</h3>
+                    <p id = "whitetext">This app allows you to browse purchasing </p>
+                    <a href = "#"><i class="fas fa-wrench"></i></a>
+                </div>
+            </div>
+            <div class = "work">
+                <img src = "work-3.png">
+                <div class = "layer">
+                    <h3> Games App</h3>
+                    <p id = "whitetext">This app allows you to play games </p>
+                    <a href = "#"><i class="fas fa-wrench"></i></a>
+                </div>
+            </div>  
+        </div>
+       <a href = "#" class = "btn" id = "whitetext"> See more</a>
+</div>
+ <!--- contact -->
+
+ <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p id= "ptext"><i class="fas fa-paper-plane "></i>jialihuang0427@gmail.com</p>
+                <p id = "ptext"><i class="fas fa-phone "></i>07984256467</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jh427/"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <a href="#" class="btn btn2">Download CV</a>
+            </div>
+
+            <div class="contact-right">
+                <form name = "submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id ="msg"> </span>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class = "copyright">
+    <p id = "whitetext"> Copyright Jiali. Made with <i class="fas fa-heart"></i> by Yours Truly, Jiali. All Rights Reserved</p>
+</div>
+<!--portfolio panel-->
+
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
 
-    function opentab(tabname){
-        for (tablink of tablinks){
-            tablink.classList.remove("active-link");
+    function opentab(tabname) {
+        var tabs = document.getElementsByClassName('tab-links');
+        var contents = document.getElementsByClassName('tab-contents');
+    
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove('active-link');
         }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
+    
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].classList.remove('active-tab');
         }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
+    
+        document.getElementById(tabname).classList.add('active-tab');
+        event.currentTarget.classList.add('active-link');
+    }
+   
+
+</script>
+   
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right ="0";
+    }
+    function closemenu(){
+        sidemenu.style.right ="-200px";
     }
 </script>
+
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+    const themeLabel = document.getElementById('theme-label'); // Get the label
+    const video = document.getElementById('themeVideo');
+    const videoSource = video.querySelector('source');
+
+    function setVideoSource() {
+        const isLightTheme = body.classList.contains('light-theme');
+        const isSmallScreen = window.innerWidth <= 600;
+
+        if (isSmallScreen) {
+            if (isLightTheme) {
+                videoSource.src = 'cloudsphone.mp4';  // Video for light mode on small screens
+            } else {
+                videoSource.src = 'intro2phone.mp4';   // Video for dark mode on small screens
+            }
+        } else {
+            if (isLightTheme) {
+                videoSource.src = 'clouds.mp4';  // Video for light mode on larger screens
+            } else {
+                videoSource.src = 'intro2.mp4';  // Video for dark mode on larger screens
+            }
+        }
+        video.load();  // Reload the video to apply the new source
+    }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-theme');  
+        if (body.classList.contains('light-theme')) {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');  // Change icon to moon for light mode
+            themeLabel.textContent = 'DARK MODE'; // Change label to Dark Mode
+        } else {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');  // Change icon to sun for dark mode
+            themeLabel.textContent = 'LIGHT MODE'; // Change label to Light Mode
+        }
+        setVideoSource();  // Call to update video source when theme is toggled
+    });
+
+    setVideoSource();
+    window.addEventListener('resize', setVideoSource);
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        const ptextElements = document.querySelectorAll('.ptext');
+        ptextElements.forEach((el) => observer.observe(el));
+    });
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyuDiNfapVm7B-q8X4a5p4LudQSH4hdody86OsBEq1PHOQY0H3QC5VIfbPHy0XQ1Nw2/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response =>{msg.innerHTML = "Message sent successfully"
+        setTimeout(function(){
+            msg.innerHTML = ""},5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  
 </body>
 
 </html>

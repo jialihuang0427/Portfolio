@@ -806,9 +806,11 @@ nav .fa-solid{
 @media only screen and (max-width: 600px){
     #header{
         background-image: var(--phone-background);
-        background-size: cover; /* Adjust this value */
-        background-position: center;
+        background-size: contain; /* Ensure the whole image fits inside the viewport */
+        background-position: top center; /* Adjust positioning to the top */
         background-repeat: no-repeat;
+        height: 100vh; /* Ensure it still covers the screen */
+        width: 100vw; /* Full viewport width */
     }
     .header-text{
         margin-top: 80%;

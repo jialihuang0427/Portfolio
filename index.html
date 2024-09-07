@@ -356,6 +356,16 @@
 </script>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const video = document.querySelector('.video-container video');
+    
+        // Check if screen is mobile-sized
+        if (window.innerWidth <= 600) {
+            video.pause(); // Pause the video
+            video.removeAttribute("autoplay"); // Remove autoplay to ensure it stays paused
+        }
+    });
+    
     document.addEventListener('DOMContentLoaded', () => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {

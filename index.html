@@ -303,9 +303,11 @@
 
     function openmenu(){
         sidemenu.style.right ="0";
+        document.body.classList.add('no-scroll');  // Disable scrolling
     }
     function closemenu(){
         sidemenu.style.right ="-200px";
+        document.body.classList.remove('no-scroll');  // Disable scrolling
     }
 </script>
 

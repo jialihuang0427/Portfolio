@@ -64,8 +64,13 @@ body{
     padding-left: 90px; /* Move the text to the right */
     font-weight: bold; /* Make the text bold */
     color: #ffffff; /* Set a fixed color (white in this case) */
+    text-shadow: 0 0 10px #4887c5, 0 0 20px #4887c5, 0 0 30px #4887c5, 0 0 40px #4887c5; /* Add glow effect */
 }
 
+.light-theme .header-text h1 {
+    color: black; /* Change text color for light mode */
+    text-shadow: 0 0 10px #545454, 0 0 20px #545454, 0 0 30px #545454, 0 0 40px #545454; /* Different glow for light mode */
+}
 
 .header-text h4 {
     margin-top: 10%;
@@ -819,7 +824,7 @@ nav .fa-solid{
         flex-basis: 100%;         /* Full width for both sections */
     }
     .header-text h1{
-        font-size: 50px;
+        font-size: 45px;
     }
     nav .fa-solid{
         display: block;
@@ -855,6 +860,21 @@ nav .fa-solid{
         animation: fadeIn 1.5s ease-in-out forwards; 
     }
 
+    #skills-section h1,
+    #experience-section h1,
+    #education-section h1 {
+        font-size: 16px; /* Make the headings slightly smaller */
+        margin-bottom: 10px; /* Reduce space below the headings */
+        margin-top: 10px; /* Reduce space above the headings */
+    }
+
+    /* Adjust the sections themselves */
+    #skills-section,
+    #experience-section,
+    #education-section {
+        margin-bottom: 5px; /* Reduce space between each section */
+    }
+
     nav ul .fa-solid{
         position: absolute;
         top: 25px;
@@ -863,7 +883,7 @@ nav .fa-solid{
     }
     .tab-contents {
         max-width: 90%; /* Make the content area narrower */
-        margin: 20px auto; /* Add spacing above/below the tab content */
+        margin: 5px auto; /* Add spacing above/below the tab content */
         border-width: 1px; /* Narrow the border width */
         border-radius: 8px; /* Optional: Adjust corner rounding */
     }
@@ -905,6 +925,20 @@ nav .fa-solid{
     #skills-section p,
     #skills-section ul li {
         font-size: 14px; /* Larger font size for skills section on mobile */
+    }
+    .skills-content h1,
+    .skills-content h2,
+    .skills-content h3 {
+        font-size: 18px; /* Make headings slightly smaller */
+        margin-bottom: 10px; /* Reduce space below headings */
+        margin-top: 10px; /* Reduce space above headings */
+    }
+
+    /* Adjust tab-links to be smaller */
+    .tab-links {
+        padding: 5px 10px; /* Make the tabs smaller */
+        font-size: 14px; /* Reduce font size of tab links */
+        margin-bottom: 10px; /* Reduce the gap between the tabs and the content */
     }
 
     #theme-label {

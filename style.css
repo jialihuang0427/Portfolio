@@ -95,9 +95,12 @@ body{
 }
 
 .video-container video {
+    pointer-events: none;  /* Disable any interaction with the video */
+    user-select: none;     /* Prevent selecting the video */
+    object-fit: cover;     /* Ensure the video covers the container */
     width: 100%;
     height: auto;
-    object-fit: cover; /* Ensures the video covers the container */
+    opacity: 1;         
 }
 #header{
     width : 100%;

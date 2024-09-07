@@ -364,6 +364,7 @@
         function checkScreenSize() {
             if (window.innerWidth <= 600) {
                 video.pause(); 
+                video.removeAttribute("controls"); // Remove controls
                 video.removeAttribute("autoplay");
                 video.currentTime = 0; 
             } else {

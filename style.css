@@ -611,6 +611,9 @@ html{
     transform: translateX(-50%);  /* Adjust to perfectly center */
 }
 
+#about {
+    padding: 80px 0;
+}
 /* Button hover effect in dark mode */
 .btn:hover {
     background-color: #333; /* Slightly lighter black on hover */
@@ -811,6 +814,7 @@ nav .fa-solid{
         background-repeat: no-repeat;
         height: 140vh; /* Ensure it still covers the screen */
         width: 100vw; /* Full viewport width */
+        position: relative;
     }
     .header-text{
         margin-top: 80%;

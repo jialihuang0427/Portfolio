@@ -806,27 +806,10 @@ nav .fa-solid{
         font-size: 16px;
     }
     .video-container {
-        margin-bottom: 40px;
-        position: absolute;
-        top: 50%; /* Adjust as needed */
-        left: 50%; /* Center horizontally */
-        transform: translate(-50%, -130%);
-        width: 50%; /* Set width to be smaller than the image */
-        height: auto; /* Maintain aspect ratio */
-        width: 90vw; /* Set the video width as 70% of the viewport width */
-        height: 45vw; 
-        z-index: 1; /* Behind the text, but above the background */
+       display: none;
     }
     
-    .video-container video {
-        width: 100%;
-        pointer-events: none; /* Disable all interactions with the video */
-        user-select: none; /* Prevent selecting the video */
-        height: auto;
-        object-fit: cover; /* Ensures the video covers the container */
-        touch-action: none; /* Disable touch interactions like zoom or press */
-        -webkit-user-drag: none; /* Prevent dragging of the video on mobile */
-    }
+    
     .header-content {
         flex-direction: column;   /* Stack text and image vertically on smaller screens */
     }

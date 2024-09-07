@@ -7,6 +7,7 @@
 
 :root {
     --default-color:black;
+    --skill-text:lightblue;
     --selftaught-col: white;
     --background-color: #080808;
     --formbackground-color:#080808;
@@ -23,6 +24,7 @@
 /* Light mode colors */
 .light-theme {
     --default-color: white;
+    --skill-text:darkblue;
     --background-color: #f4f4f4;
     --selftaught-col: rgb(22, 54, 143);
     --formbackground-color: #eff0f2; 
@@ -64,9 +66,6 @@ body{
     color: #ffffff; /* Set a fixed color (white in this case) */
 }
 
-#whitetext {
-    color: white; /* This sets the text color for dark mode */
-}
 
 .header-text h4 {
     margin-top: 10%;
@@ -417,8 +416,12 @@ html{
 }
 
 .tab-contents ul li span{
-    color: lightblue;
+    color: darkblue;
     font-size: 14px;
+}
+
+.light-theme .tab-contents ul li span {
+    color: var(--skill-text); 
 }
 .tab-links.active-link {
     background-color: #222; /* Darkened background color */
@@ -812,6 +815,7 @@ nav .fa-solid{
     
     .video-container video {
         width: 100%;
+        pointer-events: none; /* Disable all interactions with the video */
         height: auto;
         object-fit: cover; /* Ensures the video covers the container */
     }

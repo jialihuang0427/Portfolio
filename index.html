@@ -357,6 +357,29 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        const video = document.getElementById('themeVideo');
+        const body = document.body;
+        const themeToggle = document.getElementById('theme-toggle');
+    
+        function checkScreenSize() {
+            if (window.innerWidth <= 600) {
+                video.pause(); 
+                video.removeAttribute("autoplay");
+                video.currentTime = 0; 
+            } else {
+                video.play(); // Play the video on larger screens
+                video.setAttribute("autoplay", true);
+            }
+        }
+    
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+    
+        themeToggle.addEventListener('click', function () {
+            checkScreenSize(); // Re-check screen size after the theme changes
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
         const video = document.querySelector('.video-container video');
     
         // Check if screen is mobile-sized
@@ -365,7 +388,7 @@
             video.removeAttribute("autoplay"); // Remove autoplay to ensure it stays paused
         }
     });
-    
+
     document.addEventListener('DOMContentLoaded', () => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {

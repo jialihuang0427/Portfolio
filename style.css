@@ -358,6 +358,7 @@ nav ul li a.active-link {
 #skills-section p,
 #skills-section ul li {
     color: var(--text-color); /* Ensure text uses global text color */
+    font-size: 14px;
 }
 .skills-content {
     display: flex;
@@ -377,7 +378,7 @@ nav ul li a.active-link {
 }
 .tab-links{
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     position: relative;
@@ -493,7 +494,7 @@ html{
     color: white;
     background: #262626;
     padding: 40px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 300;
     border-right: 10px;
     transition: background 0.5s, transform 0.5s;
@@ -802,8 +803,8 @@ nav .fa-solid{
         background-image: var(--phone-background);
     }
     .header-text{
-        margin-top: 100%;
-        font-size: 16px;
+        margin-top: 80%;
+        font-size: 80px;
     }
     .video-container {
        display: none;
@@ -818,7 +819,7 @@ nav .fa-solid{
         flex-basis: 100%;         /* Full width for both sections */
     }
     .header-text h1{
-        font-size: 30px;
+        font-size: 50px;
     }
     nav .fa-solid{
         display: block;
@@ -840,6 +841,19 @@ nav .fa-solid{
         text-transform: lowercase; /* Make the text lowercase */
         margin: 25px;
     }
+    .light-theme nav ul li a {
+        color: white; /* Set the text color to black */
+    }
+
+    .light-theme .header-text h1 {
+        color: black;
+        animation: fadeIn 1.5s ease-in-out forwards; 
+    }
+
+    .light-theme .header-text h4 {
+        color: black; /* Change the subtext color */
+        animation: fadeIn 1.5s ease-in-out forwards; 
+    }
 
     nav ul .fa-solid{
         position: absolute;
@@ -847,6 +861,13 @@ nav .fa-solid{
         left: 25px;
         cursor: pointer;
     }
+    .tab-contents {
+        max-width: 90%; /* Make the content area narrower */
+        margin: 20px auto; /* Add spacing above/below the tab content */
+        border-width: 1px; /* Narrow the border width */
+        border-radius: 8px; /* Optional: Adjust corner rounding */
+    }
+
 
     /* Contact link in lowercase and remove button-like appearance */
     .contact-btn {
@@ -875,6 +896,15 @@ nav .fa-solid{
 
     #theme-toggle i {
         font-size: 24px; /* Adjust icon size */
+    }
+
+    #skills-section h1{
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+    #skills-section p,
+    #skills-section ul li {
+        font-size: 14px; /* Larger font size for skills section on mobile */
     }
 
     #theme-label {

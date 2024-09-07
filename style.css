@@ -58,10 +58,10 @@ body{
 /* Apply fade-in from bottom animation to the header text */
 .header-text h1 {
     margin-top: 20%;
-    font-size: 60px;
+    font-size: 55px;
     font-family: 'Poppins', sans-serif; /* Apply Poppins font */
     animation: fadeInUp 2s ease-in-out; /* Apply the fade-in from bottom animation */
-    padding-left: 90px; /* Move the text to the right */
+    padding-left: 55px; /* Move the text to the right */
     font-weight: bold; /* Make the text bold */
     color: #ffffff; /* Set a fixed color (white in this case) */
     text-shadow: 0 0 10px #4887c5, 0 0 20px #4887c5, 0 0 30px #4887c5, 0 0 40px #4887c5; /* Add glow effect */

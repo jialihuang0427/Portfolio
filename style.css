@@ -64,12 +64,12 @@ body{
     padding-left: 55px; /* Move the text to the right */
     font-weight: bold; /* Make the text bold */
     color: #ffffff; /* Set a fixed color (white in this case) */
-    text-shadow: 0 0 10px #4887c5, 0 0 20px #4887c5, 0 0 30px #4887c5, 0 0 40px #4887c5; /* Add glow effect */
+    text-shadow: 0 0 5px #4887c5, 0 0 5px #4887c5, 0 0 5px #4887c5, 0 0 5px #4887c5; /* Add glow effect */
 }
 
 .light-theme .header-text h1 {
     color: black; /* Change text color for light mode */
-    text-shadow: 0 0 10px #545454, 0 0 20px #545454, 0 0 30px #545454, 0 0 40px #545454; /* Different glow for light mode */
+    text-shadow: 0 0 3px #545454, 0 0 3px #545454, 0 0 3px #545454, 0 0 3px #545454; /* Different glow for light mode */
 }
 
 .header-text h4 {

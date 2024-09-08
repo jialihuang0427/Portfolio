@@ -346,6 +346,9 @@ nav ul li a.active-link {
     flex-basis: 60%;
 }
 
+#skills-section .sub-title {
+    font-size: 30px;
+}
 .sub-title{
     font-size: 30px;
     font-weight: 600;

@@ -969,7 +969,9 @@ nav .fa-solid{
     }
 
 
-   
+    #skills-section .sub-title {
+        font-size: 40px;
+    }
     .sub-title{
         font-size: 40px;
     }
